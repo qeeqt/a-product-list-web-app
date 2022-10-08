@@ -2,7 +2,7 @@
 import { fs } from '../server/firebase';
 import { IndividualProduct } from './IndividualProduct'
 import React, { useState, useEffect } from 'react';
-const Products = () => {
+const Products = ({ }) => {
     const [products, setProducts] = useState([]);
 
     const getProducts = async () => {
@@ -24,12 +24,13 @@ const Products = () => {
         getProducts();
     }, [])
 
+
     return products.map((individualProduct) => (
         <IndividualProduct key={individualProduct.id} individualProduct={individualProduct} />
     ))
-
-
 }
+
+
 
 
 
